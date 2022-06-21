@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Tryotter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <script type="application/javascript">
+
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper red darken-2">
+            <a href="/" class="brand-logo hide-on-med-and-down">Home</a>
+            <ul id="nav-mobile" class="right">
+                <li><a href="{% url 'news:logout' %}">Log Out</a></li>
+            </ul>
+        </div>
+    </nav>
+<h3>{{ article.title }}</h3>
+{% for aa in article.content %}
+<h5>{{ aa }}</h5>
+{% endfor %}
+</body>
+</html>
